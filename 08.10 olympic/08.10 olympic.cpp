@@ -1,29 +1,38 @@
 ﻿#include <iostream>
+#include <algorithm>
+#include <string>
+#include <stack>
+#include <sstream>
 using namespace std;
 
-void put_int(int** arr, int c_row, int c_col) {
-	for (int i = 0; i < c_row; ++i) {
-		for (int j = 0; j < c_col; ++j) {
-			arr[i][j] = (rand() % 41) + 10;
-		}
+
+
+int fib_rec(int n) {
+	if (n <= 1)  {
+		return 1;
+	}
+	else {
+		return fib_rec(n - 1) + fib_rec(n - 2);
 	}
 }
 
+int fib_for(int n) {
+	int a = 0, b = 1, c;
+	for (int i = 1; i <= n; ++i) {
+		c = b;
+		b += a;
+		a = c;
+	}
+	return b;
+}
 
-int main()
-{
-	int count_row = 0;
-	int count_col = 0;
-	cin >> count_row >> count_col;
-	int** array = new int* [count_row];
-	for (int i = 0; i < count_row; ++i) {
-		array[i] = new int[count_col];
-	}
-	put_int(array, count_row, count_col);
-	for (int i = 0; i < count_row; ++i) {
-		for (int j = 0; j < count_col; ++j) {
-			cout << array[i][j] << " ";
-		}
-		cout << endl;
-	}
+int Kill_bill(int n = 0) { 
+	return Kill_bill(n) * 1;
+}
+
+
+
+int main() {
+	Kill_bill();
+	return 0;
 }
